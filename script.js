@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ── Navbar scroll effect ── */
 const navbar = document.getElementById("navbar");
 const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenuOverlay");
 const navLinks = document.querySelector(".nav-links");
 
 window.addEventListener("scroll", () => {
@@ -50,25 +51,28 @@ window.addEventListener("scroll", () => {
 });
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+  if(mobileMenu) mobileMenu.classList.toggle("open");
   hamburger.classList.toggle("active");
-  const isOpen = navLinks.classList.contains("open");
+  const isOpen = mobileMenu ? mobileMenu.classList.contains("open") : false;
   hamburger.setAttribute("aria-expanded", isOpen);
   // Prevent body scroll when menu is open
   document.body.style.overflow = isOpen ? "hidden" : "";
 });
 
-/* Close nav when a link is clicked */
-document.querySelectorAll(".nav-link").forEach((link) => {
+/* Close nav when a link is clicked (desktop & mobile) */
+const allLinks = document.querySelectorAll(".nav-link, .mob-link");
+allLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
+    if(mobileMenu) mobileMenu.classList.remove("open");
     hamburger.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
-    document
-      .querySelectorAll(".nav-link")
-      .forEach((l) => l.classList.remove("active"));
-    link.classList.add("active");
+    
+    // Sync active state across all instances
+    const targetHref = link.getAttribute("href");
+    allLinks.forEach((l) => {
+      l.classList.toggle("active", l.getAttribute("href") === targetHref);
+    });
   });
 });
 
@@ -79,7 +83,7 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute("id");
-        document.querySelectorAll(".nav-link").forEach((l) => {
+        document.querySelectorAll(".nav-link, .mob-link").forEach((l) => {
           l.classList.toggle("active", l.getAttribute("href") === `#${id}`);
         });
       }
