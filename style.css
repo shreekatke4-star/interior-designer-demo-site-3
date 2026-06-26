@@ -1872,47 +1872,51 @@ button {
     display: none;
   }
 
-  .nav-links.open {
+  .mobile-menu-overlay {
+    display: none;
+  }
+
+  .mobile-menu-overlay.open {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(8, 8, 8, 0.98);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    padding: 5rem 2rem 3rem;
-    gap: 0.5rem;
+    inset: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* Glass blur like the navbar / loading page */
+    background: rgba(13, 13, 13, 0.55);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    padding: 0;
+    gap: 0.4rem;
     z-index: 999;
     overflow: hidden;
   }
 
-  .nav-links.open .nav-link {
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
+  .mobile-menu-overlay .mob-link {
+    font-size: 1.35rem;
+    padding: 0.9rem 2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 0;
     color: rgba(255, 255, 255, 0.9);
     letter-spacing: 0.06em;
-    width: 100%;
-    max-width: 320px;
+    width: 80%;
     text-align: center;
     font-family: var(--font-serif);
+    text-decoration: none;
+    transition: var(--transition);
   }
 
-  .nav-links.open .nav-link:last-child {
+  .mobile-menu-overlay .mob-link:last-child {
     border-bottom: none;
   }
 
-  .nav-links.open .nav-link.active,
-  .nav-links.open .nav-link:hover {
-    background: rgba(201, 169, 110, 0.1);
+  .mobile-menu-overlay .mob-link.active,
+  .mobile-menu-overlay .mob-link:hover {
+    background: rgba(201, 169, 110, 0.12);
     color: var(--gold);
     border-radius: 8px;
     border-bottom-color: transparent;
@@ -1921,12 +1925,13 @@ button {
   .hamburger {
     display: flex;
     position: relative;
-    z-index: 1001;
+    z-index: 1002;
   }
 
-  /* Ensure navbar sits above the full-screen mobile menu */
+  /* Navbar floats above the full-screen overlay, no horizontal padding clipping */
   .nav-container {
     z-index: 1001;
+    padding: 0 1rem;
   }
 
   .btn-signup {
