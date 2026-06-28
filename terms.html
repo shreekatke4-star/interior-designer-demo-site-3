@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions – MAISON Interior Studio</title>
+    <meta name="description" content="MAISON Interior Studio Terms and Conditions — the rules, obligations, and agreements governing use of our services." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --bg-dark: #0d0d0d;
+        --bg-card: #1a1a1a;
+        --green: #1a5c3a;
+        --gold: #c9a96e;
+        --gold-light: #dfc08a;
+        --white: #ffffff;
+        --grey: #aaaaaa;
+        --font-serif: "Playfair Display", Georgia, serif;
+        --font-sans: "Inter", system-ui, sans-serif;
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--bg-dark);
+        color: var(--white);
+        font-family: var(--font-sans);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      /* ── Top bar ── */
+      .top-bar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(13,13,13,0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(201,169,110,0.12);
+        padding: 0 2rem;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .top-bar-logo {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+      .top-bar-logo .logo-main {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+      }
+      .top-bar-logo .logo-sub {
+        font-size: 0.45rem;
+        letter-spacing: 0.35em;
+        color: var(--grey);
+        margin-top: 1px;
+      }
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--gold);
+        border: 1px solid rgba(201,169,110,0.3);
+        padding: 0.45rem 1rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+      .btn-back:hover {
+        background: rgba(201,169,110,0.1);
+        border-color: var(--gold);
+      }
+
+      /* ── Hero Banner ── */
+      .page-hero {
+        padding: 80px 2rem 60px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 0%, rgba(26,92,58,0.15) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .page-hero-label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--gold);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .page-hero h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+      .page-hero p {
+        font-size: 0.9rem;
+        color: var(--grey);
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      .page-hero .last-updated {
+        margin-top: 1.5rem;
+        display: inline-block;
+        font-size: 0.78rem;
+        color: rgba(255,255,255,0.35);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 4px 14px;
+        border-radius: 20px;
+      }
+
+      /* ── Content ── */
+      .page-content {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 70px 2rem 100px;
+      }
+      .section-block {
+        margin-bottom: 50px;
+      }
+      .section-block h2 {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(201,169,110,0.2);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-block h2 .sec-num {
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--gold);
+        background: rgba(201,169,110,0.1);
+        border: 1px solid rgba(201,169,110,0.25);
+        padding: 3px 10px;
+        border-radius: 20px;
+        letter-spacing: 0.05em;
+      }
+      .section-block p {
+        font-size: 0.9rem;
+        color: var(--grey);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      .section-block p:last-child { margin-bottom: 0; }
+      .section-block ul {
+        list-style: none;
+        margin: 0.75rem 0 1rem;
+      }
+      .section-block ul li {
+        font-size: 0.88rem;
+        color: var(--grey);
+        padding: 8px 0 8px 22px;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+        position: relative;
+      }
+      .section-block ul li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        color: var(--gold);
+        font-size: 0.65rem;
+        top: 10px;
+      }
+      .section-block ul li:last-child { border-bottom: none; }
+
+      .highlight-box {
+        background: rgba(26,92,58,0.08);
+        border: 1px solid rgba(201,169,110,0.15);
+        border-left: 3px solid var(--gold);
+        border-radius: 8px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .highlight-box p {
+        color: rgba(255,255,255,0.8) !important;
+        font-size: 0.88rem !important;
+      }
+
+      .warning-box {
+        background: rgba(180,100,50,0.08);
+        border: 1px solid rgba(255,160,80,0.2);
+        border-left: 3px solid #c97a3e;
+        border-radius: 8px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .warning-box p {
+        color: rgba(255,200,150,0.9) !important;
+        font-size: 0.85rem !important;
+        margin: 0 !important;
+      }
+
+      /* Contact block */
+      .contact-block {
+        background: #141414;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-top: 60px;
+        text-align: center;
+      }
+      .contact-block h3 {
+        font-family: var(--font-serif);
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+      .contact-block p {
+        font-size: 0.85rem;
+        color: var(--grey);
+        margin-bottom: 1.25rem;
+      }
+      .contact-block .btn-row {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .contact-block a {
+        display: inline-block;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 0.7rem 1.8rem;
+        border-radius: 30px;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+      }
+      .btn-primary {
+        background: var(--green);
+        color: var(--white) !important;
+      }
+      .btn-primary:hover { background: #2a7a50 !important; transform: translateY(-2px); }
+      .btn-outline {
+        background: transparent;
+        color: var(--gold) !important;
+        border: 1px solid rgba(201,169,110,0.4);
+      }
+      .btn-outline:hover { background: rgba(201,169,110,0.08) !important; transform: translateY(-2px); }
+
+      /* Footer */
+      .page-footer {
+        background: #090909;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        text-align: center;
+        padding: 1.5rem 2rem;
+        font-size: 0.78rem;
+        color: var(--grey);
+      }
+      .page-footer a { color: var(--gold); }
+      .page-footer a:hover { text-decoration: underline; }
+
+      @media (max-width: 600px) {
+        .page-hero { padding: 50px 1.5rem 40px; }
+        .page-content { padding: 50px 1.5rem 80px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <a href="index.html" class="top-bar-logo">
+        <span class="logo-main">MAISON</span>
+        <span class="logo-sub">INTERIOR STUDIO</span>
+      </a>
+      <a href="index.html" class="btn-back">← Back to Home</a>
+    </div>
+
+    <!-- Hero -->
+    <div class="page-hero">
+      <span class="page-hero-label">Legal Document</span>
+      <h1>Terms &amp; Conditions</h1>
+      <p>Please read these terms carefully before using our website or engaging our interior design services. By proceeding, you agree to be bound by them.</p>
+      <span class="last-updated">Last Updated: June 28, 2026</span>
+    </div>
+
+    <!-- Content -->
+    <div class="page-content">
+
+      <div class="section-block">
+        <div class="highlight-box">
+          <p>These Terms & Conditions constitute a legally binding agreement between you ("Client") and MAISON Interior Studio ("Studio", "we", "us"). By accessing our website or engaging our services, you accept these terms in full. If you disagree with any part of these terms, please do not use our services.</p>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">01</span> About MAISON Interior Studio</h2>
+        <p>MAISON Interior Studio is a premium interior design studio based in India, specializing in luxury residential and commercial design. We offer a comprehensive range of design services including space planning, bespoke furniture, lighting, material curation, and full project management.</p>
+        <p>All services are subject to a formal design agreement signed between the Studio and the Client prior to commencement of any project work.</p>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">02</span> Use of Website</h2>
+        <p>Our website is provided for informational and lead-generation purposes. By using this website, you agree that:</p>
+        <ul>
+          <li>You will not use the website for any unlawful or unauthorized purpose</li>
+          <li>You will not reproduce, duplicate, or copy any content without written permission</li>
+          <li>You will not transmit any malicious code or attempt to disrupt the website's operation</li>
+          <li>You will provide accurate and truthful information when submitting consultation requests</li>
+          <li>You are at least 18 years of age or have the consent of a legal guardian</li>
+        </ul>
+        <p>We reserve the right to restrict access to the website or any part of it at our sole discretion without notice.</p>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">03</span> Consultation & Booking</h2>
+        <p>When you submit a consultation request via our website or WhatsApp, the following applies:</p>
+        <ul>
+          <li>All initial consultations are subject to availability and confirmation by the Studio</li>
+          <li>A consultation booking does not constitute a service agreement or guarantee of project undertaking</li>
+          <li>Detailed project scopes, timelines, and fees are finalized through a separate formal proposal</li>
+          <li>The Studio reserves the right to decline any project at its discretion</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">04</span> Design Fees & Payments</h2>
+        <p>All project fees are governed by the individual service agreement signed at project commencement. General payment terms include:</p>
+        <ul>
+          <li>A design retainer is required before any work begins on a project</li>
+          <li>Milestone-based payments are structured per the agreed project schedule</li>
+          <li>All fees are quoted in Indian Rupees (INR) and are inclusive of applicable taxes unless stated otherwise</li>
+          <li>Delays in payment may result in project pauses or termination at the Studio's discretion</li>
+          <li>Refund policies are outlined in the individual service agreement</li>
+        </ul>
+        <div class="warning-box">
+          <p>⚠ Fees quoted on our website are indicative estimates only. Final project fees may vary based on the scope of work, material selection, and site-specific requirements.</p>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">05</span> Intellectual Property</h2>
+        <p>All design concepts, drawings, mood boards, 3D renders, and creative materials produced by MAISON Interior Studio remain the intellectual property of the Studio until full payment has been received.</p>
+        <ul>
+          <li>Clients may not reproduce or share design documentation for commercial purposes without written consent</li>
+          <li>MAISON Interior Studio retains the right to photograph completed projects and use images for portfolio, marketing, and promotional purposes</li>
+          <li>The Studio's name, logo, and brand assets are protected trademarks and may not be used without authorization</li>
+          <li>All website content including images, text, and graphics are owned by or licensed to MAISON Interior Studio</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">06</span> Client Responsibilities</h2>
+        <p>To ensure the smooth delivery of your project, clients are expected to:</p>
+        <ul>
+          <li>Provide accurate measurements, site access, and relevant technical documents in a timely manner</li>
+          <li>Review and provide feedback on design submissions within agreed timelines</li>
+          <li>Make decisions regarding approvals and material selections promptly to avoid project delays</li>
+          <li>Ensure site is ready and accessible for all contractors and the Studio team on agreed dates</li>
+          <li>Communicate any changes in project scope or requirements immediately to the Studio</li>
+        </ul>
+        <p>Delays caused by client inaction, inaccessibility, or late payments may result in revised project timelines and additional costs.</p>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">07</span> Limitation of Liability</h2>
+        <p>MAISON Interior Studio shall not be liable for any indirect, incidental, or consequential damages arising from the use of our website or services. Our liability is limited to the total fees paid by the client for the specific services in question.</p>
+        <p>We are not responsible for:</p>
+        <ul>
+          <li>Delays caused by third-party contractors, suppliers, or force majeure events</li>
+          <li>Inaccuracies in design due to incorrect information provided by the client</li>
+          <li>Any structural issues, building regulations violations, or permissions the client is responsible for obtaining</li>
+          <li>Variations in material colour, texture, or finish that may occur due to screen rendering differences</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">08</span> Confidentiality</h2>
+        <p>Both parties agree to maintain the confidentiality of any sensitive business or personal information shared during the project. The Studio will not disclose client project details, addresses, or personal information to any unauthorized third party.</p>
+        <p>Clients agree not to disclose the Studio's proprietary design methodologies, supplier contacts, or trade pricing information shared during the project engagement.</p>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">09</span> Termination</h2>
+        <p>Either party may terminate a project engagement subject to the notice period and conditions defined in the individual service agreement. Upon termination:</p>
+        <ul>
+          <li>All work completed to date is billable and payable by the client</li>
+          <li>Any materials ordered or committed on behalf of the client remain the client's financial responsibility</li>
+          <li>Design files and drawings will be released to the client only upon receipt of all outstanding payments</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">10</span> Governing Law & Disputes</h2>
+        <p>These Terms and Conditions are governed by the laws of India. Any disputes arising from or related to these terms or services provided by MAISON Interior Studio shall be subject to the exclusive jurisdiction of the courts located in New Delhi, India.</p>
+        <p>We encourage all disputes to be resolved amicably through direct discussion before pursuing formal legal action.</p>
+      </div>
+
+      <div class="section-block">
+        <h2><span class="sec-num">11</span> Changes to These Terms</h2>
+        <p>MAISON Interior Studio reserves the right to modify these Terms and Conditions at any time. Changes will be posted on this page with an updated "Last Updated" date. Continued use of our website or services after changes constitutes acceptance of the revised terms.</p>
+      </div>
+
+      <!-- Contact CTA -->
+      <div class="contact-block">
+        <h3>Have Questions About Our Terms?</h3>
+        <p>Our team is available to clarify any aspect of our terms before you engage our services.</p>
+        <div class="btn-row">
+          <a href="mailto:hello@maisoninteriors.com" class="btn-primary">✉ Contact Us</a>
+          <a href="privacy.html" class="btn-outline">View Privacy Policy</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <p>© 2026 MAISON Interior Studio. All Rights Reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </div>
+
+  </body>
+</html>
